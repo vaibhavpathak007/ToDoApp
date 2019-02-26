@@ -1,10 +1,12 @@
 <table border="1">
   <tr>
-    <th>Id</th>
     <th>Description</th>
+    <th>Completed ?</th>
+    <th>End Date</th>
   </tr>
   <tr *ngFor="let todo of todos">
-    <td>{{todo.id}}</td>
     <td>{{todo.description}}</td>
+    <td>{{todo.isCompleted}}</td>
+    <td>{{todo.dueDate | date | uppercase}}</td>
   </tr>
 </table>
