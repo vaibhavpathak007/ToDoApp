@@ -1,5 +1,19 @@
-<small *ngIf="isLoginInvalid">{{errmsg}}</small> <br/>
-User Name : <input type="text" name="username" id="uname" [(ngModel)]="userName" >
-Password : <input type="password" name="password" id="pass" [(ngModel)]="password" >
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="alert alert-warning" *ngIf="isLoginInvalid">{{errmsg}}</div>
+            <div class="form-group">
+                <label for="uname">User Name</label>
+                <input type="text" class="form-control" name="username" id="uname" [(ngModel)]="userName">
+            </div>
+            <div class="form-group">
+                <label for="pass">Password</label>
+                <input type="password" class="form-control" name="password" id="pass" [(ngModel)]="password">
+            </div>
+            <button class="btn btn-success" (click)="doLogin()">login</button>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
 
-<button  (click)="doLogin()">login</button>

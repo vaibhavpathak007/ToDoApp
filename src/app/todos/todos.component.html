@@ -1,12 +1,19 @@
-<table border="1">
-  <tr>
-    <th>Description</th>
-    <th>Completed ?</th>
-    <th>End Date</th>
-  </tr>
-  <tr *ngFor="let todo of todos">
-    <td>{{todo.description}}</td>
-    <td>{{todo.isCompleted}}</td>
-    <td>{{todo.dueDate | date | uppercase}}</td>
-  </tr>
-</table>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <h2>ToDo List</h2>
+      <table class="table">
+        <tr>
+          <th>Description</th>
+          <th>Completed ?</th>
+          <th>End Date</th>
+        </tr>
+        <tr *ngFor="let todo of todos">
+          <td>{{todo.description}}</td>
+          <td>{{todo.isCompleted}}</td>
+          <td>{{todo.dueDate | date | uppercase}}</td>
+        </tr>
+      </table>
+  </div>
+  <div class="col-2"></div>
+</div>
