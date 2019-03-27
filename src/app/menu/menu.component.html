@@ -9,8 +9,8 @@
         <a class="nav-item nav-link" routerLink="/todos">Todo</a>
       </div>
       <div class="navbar-nav ml-auto">
-        <a *ngIf="authService.isAuthenticated()" class="nav-item nav-link " routerLink="">SighOut</a>
-        <a *ngIf="!authService.isAuthenticated()" class="nav-item nav-link " routerLink="">Log-In</a>
+        <a *ngIf="authService.isAuthenticated()" class="nav-item nav-link " routerLink="/logout">SighOut</a>
+        <a *ngIf="!authService.isAuthenticated()" class="nav-item nav-link " routerLink="/login">Log-In</a>
       </div>
     </div>
   </nav>

@@ -23,6 +23,10 @@ export class HardcodedauthenticationService {
     if(sessionStorage.getItem('authenticatedUser')) return true;
     else return false;
   }
+  
+  doLogout(){
+    sessionStorage.clear();
+  }
 
 
 
