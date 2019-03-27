@@ -7,13 +7,23 @@ export class HardcodedauthenticationService {
 
   constructor() { }
 
-   isAuthenticated(userName,password) : boolean{
+   authenticate(userName,password) : boolean{
+    console.log('before authentication user valid : '+this.isAuthenticated());
     if(userName === 'abc' && password === 'abc'){
+      sessionStorage.setItem('authenticatedUser',userName);
+      console.log('after authentication user valid : '+this.isAuthenticated());
       return true;
     }
     else{
       return false;
     }
   }
+
+  isAuthenticated(){
+    if(sessionStorage.getItem('authenticatedUser')) return true;
+    else return false;
+  }
+
+
 
 }

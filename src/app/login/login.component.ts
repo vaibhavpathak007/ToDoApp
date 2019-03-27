@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   doLogin(){
     console.log("Welcome " + this.userName);
-    if(this.authenticator.isAuthenticated(this.userName,this.password)){
+    if(this.authenticator.authenticate(this.userName,this.password)){
         this.isLoginInvalid = false;
         this.router.navigate(['welcome', this.userName]);
     }
