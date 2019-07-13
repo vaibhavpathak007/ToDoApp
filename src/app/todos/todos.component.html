@@ -1,19 +1,26 @@
+
+  <div *ngIf="message" class="alert alert-success">
+     {{message}}
+  </div>
+
 <div class="row">
-  <div class="col-2"></div>
-  <div class="col-8">
+  <div class="col-12 col-md-2"></div>
+  <div class="col-12 col-md-8">
     <h2>ToDo List</h2>
-      <table class="table">
+      <table class="table table-striped">
         <tr>
-          <th>Description</th>
-          <th>Completed ?</th>
-          <th>End Date</th>
+          <th scope="col">Description</th>
+          <th scope="col">Completed ?</th>
+          <th scope="col">End Date</th>
+          <th scope="col">Action</th>
         </tr>
         <tr *ngFor="let todo of todos">
           <td>{{todo.description}}</td>
-          <td>{{todo.isCompleted}}</td>
+          <td>{{todo.completed}}</td>
           <td>{{todo.dueDate | date | uppercase}}</td>
+          <td><button type="button" class="btn btn-warning" (click)="deteleTodo(todo.id)">Delete</button></td>
         </tr>
       </table>
   </div>
-  <div class="col-2"></div>
+  <div class="col-12 col-md-2"></div>
 </div>
