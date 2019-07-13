@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginComponent } from './common/login/login.component';
+import { LoginComponent } from './component/login/login.component';
 import { WelcomeComponent } from './component/welcome/welcome.component';
-import { ErrorComponent } from './common/error/error.component';
+import { ErrorComponent } from './component/error/error.component';
 import { TodosComponent } from './component/todos/todos.component';
-import { LogoutComponent } from './common/logout/logout.component';
+import { LogoutComponent } from './component/logout/logout.component';
 import { RouteGuardService } from './service/route-guard.service';
 import { ViewTodoComponent } from './component/view-todo/view-todo.component';
 

@@ -5,17 +5,26 @@ import { ViewTodoComponent } from "./view-todo/view-todo.component";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "../app-routing.module";
+import { ErrorComponent } from "./error/error.component";
+import { LoginComponent } from "./login/login.component";
+import { LogoutComponent } from "./logout/logout.component";
+import { MenuComponent } from "./menu/menu.component";
 
 @NgModule({
     declarations: [
       WelcomeComponent,
       TodosComponent,
-      ViewTodoComponent
+      ViewTodoComponent,
+      ErrorComponent,
+      LoginComponent,
+      LogoutComponent,
+      MenuComponent
     ],
     imports: [
       AppRoutingModule,
       FormsModule,
       BrowserModule
-    ]
+    ],
+    exports: [AppRoutingModule, MenuComponent] // Because we are using <router-Outlet> and <app-menu> in appComponent
   })
   export class TodoModule { }
