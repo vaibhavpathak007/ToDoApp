@@ -13,7 +13,11 @@ export class TodoService {
    return this.http.get<Todo[]>(`http://localhost:8080/user/${user}/todos`);  
   }
 
+  getTodo(user: string, id: number){
+    return this.http.get<Todo>(`http://localhost:8080/user/${user}/todos/${id}`);  
+  }
+
   deleteTodo(user: string, id: number){
-    return this.http.delete<Todo>(`http://localhost:8080/user/${user}/todos/${id}`);  
+    return this.http.delete(`http://localhost:8080/user/${user}/todos/${id}`);  
   }
 }

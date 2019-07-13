@@ -12,13 +12,20 @@
           <th scope="col">Description</th>
           <th scope="col">Completed ?</th>
           <th scope="col">End Date</th>
-          <th scope="col">Action</th>
+          <th scope="col">Actions</th>
         </tr>
         <tr *ngFor="let todo of todos">
           <td>{{todo.description}}</td>
           <td>{{todo.completed}}</td>
           <td>{{todo.dueDate | date | uppercase}}</td>
-          <td><button type="button" class="btn btn-warning" (click)="deteleTodo(todo.id)">Delete</button></td>
+          <td>
+            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Edit" (click)="editTodo(todo.id)">
+              <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
+            </button>&nbsp;
+            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete" (click)="deteleTodo(todo.id)">
+              <i class="fa fa-trash-o fa-lg"></i>
+            </button>
+          </td>
         </tr>
       </table>
   </div>

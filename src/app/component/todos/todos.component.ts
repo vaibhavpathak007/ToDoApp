@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../model/Todo.mode';
-import { TodoService } from '../service/todo.service';
+import { Todo } from '../../model/Todo.mode';
+import { TodoService } from '../../service/todo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todos',
@@ -12,7 +13,8 @@ export class TodosComponent implements OnInit {
   todos : Todo[];
   message: string;
 
-  constructor(private todoService: TodoService) { }
+  constructor(private todoService: TodoService,
+    private router: Router) { }
 
   ngOnInit() {
     this.initializeTodos();
@@ -32,6 +34,10 @@ export class TodosComponent implements OnInit {
       error=>{
         this.message= "Error in Delete";
       });
+  }
+
+  editTodo(id: number){
+    this.router.navigate(['/viewTodo',id]);
   }
 
 }
