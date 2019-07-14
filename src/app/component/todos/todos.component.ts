@@ -40,4 +40,8 @@ export class TodosComponent implements OnInit {
     this.router.navigate(['/viewTodo',id]);
   }
 
+  addTodo(){
+    this.router.navigate(['/viewTodo',0]);
+  }
+
 }

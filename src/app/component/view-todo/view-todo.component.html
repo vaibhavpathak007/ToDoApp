@@ -9,7 +9,7 @@
                 <label for="description">End Date</label>
                 <input type="date" class="form-control" [ngModel] ="todo.dueDate | date:'yyyy-MM-dd'" (ngModelChange)="todo.dueDate = $event" id="description" placeholder="date"> 
             </div>
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success" (click)="save()">Submit</button>
             <!-- [ngModel] ="todo.date | date:'yyyy-mm-dd'" (ngModelChange)="todo.date = $event" -->
     </div>
     <div class="col-12 col-md-2"></div>
