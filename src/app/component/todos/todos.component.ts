@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { Todo } from '../../model/Todo.mode';
 import { TodoService } from '../../service/todo.service';
 import { Router } from '@angular/router';
@@ -8,16 +8,20 @@ import { Router } from '@angular/router';
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css']
 })
-export class TodosComponent implements OnInit {
+export class TodosComponent implements OnInit, AfterViewInit {
 
   todos : Todo[];
   message: string;
 
   constructor(private todoService: TodoService,
-    private router: Router) { }
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.initializeTodos();
+  }
+
+  ngAfterViewInit() {
   }
 
   initializeTodos(){

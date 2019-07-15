@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { TodoService } from '../../service/todo.service';
 import { Todo } from '../../model/Todo.mode';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -17,7 +17,8 @@ export class ViewTodoComponent implements OnInit {
 
   constructor(private todoService: TodoService,
     private router: Router,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.initializeForm();
@@ -28,7 +29,7 @@ export class ViewTodoComponent implements OnInit {
         this.todoForm.patchValue({
           id: response.id,
           description: response.description,
-          date: new DatePipe('en-US').transform(new Date(response.dueDate),'yyyy-MM-dd')
+          dueDate: new DatePipe('en-US').transform(new Date(response.dueDate),'yyyy-MM-dd')
         });
       });
     }
@@ -36,9 +37,9 @@ export class ViewTodoComponent implements OnInit {
 
   initializeForm(){
     this.todoForm = new FormGroup({
-      id: new FormControl(''),
-      description: new FormControl(''),
-      date: new FormControl('')
+      id: new FormControl(0),
+      description: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      dueDate: new FormControl('', Validators.required)
     });
   }
 
@@ -53,7 +54,14 @@ export class ViewTodoComponent implements OnInit {
         console.log(response);
       });
     }
+    this.cdr.detectChanges();
     this.router.navigate(['todos']);
+  }
+
+  submitForm(){
+    if(this.todoForm.valid){
+      this.save();
+    }
   }
 
 }
