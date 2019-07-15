@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { TodosComponent } from "./todos/todos.component";
 import { ViewTodoComponent } from "./view-todo/view-todo.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "../app-routing.module";
 import { ErrorComponent } from "./error/error.component";
@@ -22,6 +22,7 @@ import { MenuComponent } from "./menu/menu.component";
     ],
     imports: [
       AppRoutingModule,
+      ReactiveFormsModule,
       FormsModule,
       BrowserModule
     ],
