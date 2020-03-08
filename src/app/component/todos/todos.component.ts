@@ -14,11 +14,13 @@ export class TodosComponent implements OnInit, AfterViewInit {
   message: string;
 
   constructor(private todoService: TodoService,
-    private router: Router
+    private router: Router, private cdr: ChangeDetectorRef
     ) { }
 
   ngOnInit() {
     this.initializeTodos();
+    this.cdr.detectChanges();
+
   }
 
   ngAfterViewInit() {
