@@ -7,8 +7,7 @@ import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-view-todo',
-  templateUrl: './view-todo.component.html',
-  styleUrls: ['./view-todo.component.css']
+  templateUrl: './view-todo.component.html'
 })
 export class ViewTodoComponent implements OnInit {
 

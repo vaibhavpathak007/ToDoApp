@@ -13,7 +13,9 @@ import { BasicAuthenticationInterceptorService } from './security/basic-authenti
     HttpClientModule,
     TodoModule
   ],
-  providers: [{provide:HTTP_INTERCEPTORS, useClass: BasicAuthenticationInterceptorService, multi:true}],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass: BasicAuthenticationInterceptorService, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

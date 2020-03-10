@@ -5,8 +5,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todos',
-  templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.css']
+  templateUrl: './todos.component.html'
 })
 export class TodosComponent implements OnInit, AfterViewInit {
 

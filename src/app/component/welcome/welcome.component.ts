@@ -4,8 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-welcome',
-  templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  templateUrl: './welcome.component.html'
 })
 export class WelcomeComponent implements OnInit {
 
@@ -16,11 +15,6 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.route.snapshot.params['name'];
-  }
-
-  callService(){
-    console.log(this.http.get('http://localhost:8080/hello-world'));
-    this.http.get('http://localhost:8080/hello-world').subscribe();
   }
 
 }
